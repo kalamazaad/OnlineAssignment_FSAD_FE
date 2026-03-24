@@ -17,8 +17,8 @@ export const AuthProvider = ({ children }) => {
         setLoading(false);
     }, []);
 
-    const login = async (username, password) => {
-        const res = await api.post('/auth/login', { username, password });
+    const login = async (username, password, captcha, captchaToken) => {
+        const res = await api.post('/auth/login', { username, password, captcha, captchaToken });
         const data = res.data;
         localStorage.setItem('token', data.token);
         const userData = {
@@ -32,8 +32,8 @@ export const AuthProvider = ({ children }) => {
         return userData;
     };
 
-    const signup = async (username, name, password, role) => {
-        await api.post('/auth/signup', { username, name, password, role });
+    const signup = async (username, email, name, password, role) => {
+        await api.post('/auth/signup', { username, email, name, password, role });
     };
 
     const logout = () => {

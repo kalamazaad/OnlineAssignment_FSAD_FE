@@ -6,6 +6,9 @@ import Signup from './pages/Signup';
 import TeacherDashboard from './pages/TeacherDashboard';
 import StudentDashboard from './pages/StudentDashboard';
 
+import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/ResetPassword';
+
 const PrivateRoute = ({ children, roles }) => {
   const { user } = useAuth();
   if (!user) {
@@ -33,6 +36,8 @@ function App() {
           <Route path="/" element={<DefaultRedirect />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
 
           <Route path="/teacher/*" element={
             <PrivateRoute roles={['ROLE_TEACHER']}>

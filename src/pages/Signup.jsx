@@ -6,6 +6,7 @@ import { UserPlus } from 'lucide-react';
 export default function Signup() {
     const [formData, setFormData] = useState({
         username: '',
+        email: '',
         name: '',
         password: '',
         role: 'ROLE_STUDENT'
@@ -28,7 +29,7 @@ export default function Signup() {
         setError('');
         setIsLoading(true);
         try {
-            await signup(formData.username, formData.name, formData.password, formData.role);
+            await signup(formData.username, formData.email, formData.name, formData.password, formData.role);
             navigate('/login');
         } catch (err) {
             setError(err.response?.data?.message || 'Registration failed. Try again.');
@@ -56,6 +57,19 @@ export default function Signup() {
                             onChange={handleChange}
                             required
                             placeholder="John Doe"
+                        />
+                    </div>
+
+                    <div className="input-group">
+                        <label>Email Address</label>
+                        <input
+                            type="email"
+                            name="email"
+                            className="input-field"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                            placeholder="john@example.com"
                         />
                     </div>
 
