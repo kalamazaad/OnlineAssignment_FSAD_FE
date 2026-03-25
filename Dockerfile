@@ -1,6 +1,3 @@
-Docker Script for Deploying Frontend
-——————————————————
-
 # -------- Stage 1: Build with Vite --------
 FROM node:24 AS builder
 WORKDIR /app

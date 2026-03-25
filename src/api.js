@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:8080/api',
+    // baseURL: 'http://localhost:8080/api',
+    baseURL: 'https://onlineassignment-fsad-be.onrender.com/',
 });
 
 api.interceptors.request.use((config) => {
