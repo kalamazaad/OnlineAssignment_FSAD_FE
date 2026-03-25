@@ -4,12 +4,12 @@
   --primary: #4F46E5;
   --primary-hover: #4338CA;
   --secondary: #10B981;
-  --bg-color: #0F172A;
-  --surface: #1E293B;
-  --surface-hover: #334155;
-  --text-main: #F8FAFC;
-  --text-muted: #94A3B8;
-  --border-color: #334155;
+  --bg-color: #cee3f8;
+  --surface: #FFFFFF;
+  --surface-hover: #F1F5F9;
+  --text-main: #0F172A;
+  --text-muted: #475569;
+  --border-color: #E2E8F0;
   --error: #EF4444;
 }
 
@@ -57,18 +57,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at top right, #1e1b4b, var(--bg-color));
+  background: var(--bg-color);
   padding: 2rem;
 }
 
 .auth-card {
-  background: var(--surface);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 3rem;
   border-radius: 1.5rem;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 450px;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .auth-title {
@@ -102,10 +103,11 @@ body {
   width: 100%;
   padding: 0.75rem 1rem;
   border-radius: 0.75rem;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   color: var(--text-main);
   font-size: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease;
 }
 
