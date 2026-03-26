@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { BookOpen, FileText, UploadCloud, CheckCircle, LogOut, AlertCircle, Clock } from 'lucide-react';
-import api from '../api';
+import api, { API_BASE_URL } from '../api';
 
 export default function StudentDashboard() {
     const { user, logout } = useAuth();
@@ -169,7 +169,7 @@ export default function StudentDashboard() {
                                             <p className="card-desc">{assign.description}</p>
 
                                             {assign.fileUrl && (
-                                                <a href={`http://localhost:8080${assign.fileUrl}`} target="_blank" rel="noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm flex items-center gap-1 mb-4">
+                                                <a href={`${API_BASE_URL}${assign.fileUrl}`} target="_blank" rel="noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm flex items-center gap-1 mb-4">
                                                     <FileText size={16} /> View Instruction PDF
                                                 </a>
                                             )}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Users, FileText, CheckCircle, LogOut, Plus, BookOpen, AlertCircle, Calendar } from 'lucide-react';
-import api from '../api';
+import api, { API_BASE_URL } from '../api';
 
 export default function TeacherDashboard() {
     const { user, logout } = useAuth();
@@ -207,7 +207,7 @@ export default function TeacherDashboard() {
                                         </div>
                                         <p className="card-desc mt-2">{assign.description}</p>
                                         {assign.fileUrl && (
-                                            <a href={`http://localhost:8080${assign.fileUrl}`} target="_blank" rel="noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm flex items-center gap-1">
+                                            <a href={`${API_BASE_URL}${assign.fileUrl}`} target="_blank" rel="noreferrer" className="text-indigo-400 hover:text-indigo-300 text-sm flex items-center gap-1">
                                                 <FileText size={16} /> View Attached PDF
                                             </a>
                                         )}
@@ -254,7 +254,7 @@ export default function TeacherDashboard() {
                                                 <td>{sub.student.name}</td>
                                                 <td>{new Date(sub.submittedAt).toLocaleString()}</td>
                                                 <td>
-                                                    <a href={`http://localhost:8080${sub.fileUrl}`} target="_blank" rel="noreferrer" className="text-indigo-400 hover:text-indigo-300 flex items-center gap-1">
+                                                    <a href={`${API_BASE_URL}${sub.fileUrl}`} target="_blank" rel="noreferrer" className="text-indigo-400 hover:text-indigo-300 flex items-center gap-1">
                                                         <FileText size={16} /> View PDF
                                                     </a>
                                                 </td>
