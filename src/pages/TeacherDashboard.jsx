@@ -96,7 +96,9 @@ export default function TeacherDashboard() {
             await api.post(`/teacher/courses/${courseId}/students`, { studentUsername });
             alert('Student added successfully!');
         } catch (err) {
-            alert(err.response?.data || 'Failed to add student');
+            const errorData = err.response?.data;
+            const message = errorData?.message || (typeof errorData === 'string' ? errorData : 'Failed to add student');
+            alert(message);
         }
     }
 
