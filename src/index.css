@@ -429,3 +429,69 @@ td {
 tr:last-child td {
   border-bottom: none;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 1rem;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .sidebar-logo {
+    margin-bottom: 1rem;
+  }
+
+  .sidebar nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .nav-link {
+    width: auto;
+    margin-bottom: 0;
+    padding: 0.5rem 1rem;
+  }
+
+  .logout-btn {
+    margin-top: 1rem;
+    width: fit-content;
+  }
+
+  .main-content {
+    padding: 1rem;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal {
+    padding: 1.5rem;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  form.flex {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  form.flex input, form.flex button {
+    width: 100%;
+  }
+}
